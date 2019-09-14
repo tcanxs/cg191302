@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+        <style>
+                p {font-size:2em;} /* 14px/16=0.875em */
+                </style>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TempN</title>
+
+</head>
+<body>
+
+    <p id="div"></p>
+
+    <script>
+        var original=''
+
+        function keyDown(e) { 
+ 
+ 　 	var keycode = e.which;   
+        console.log(keycode)
+       switch (keycode) {
+           
+           case 13: 
+                original+="</br>";
+                break;
+
+            case 9:
+                original+="\xa0\xa0\xa0\xa0"
+                break;
+
+            case 8: 
+                original=original.substr(0,original.length-1)
+              //  break;
+
+            case 32:
+                original+='\xa0'
+                break;
+
+            case 186:
+                original+=':'
+                break;
+
+            case 187:
+                original+='='
+                break;
+
+            case 189:
+                original+='-'
+                break;
+
+            case 191:
+                original+='？'
+                break;
+
+            case 222:
+                original+='"'
+                break;
+
+            case 188:
+                original+='，'
+                break;
+
+            case 190:
+                original+='。'
+                break;
+
+
+
+            default:{
+                original+=String.fromCodePoint(Math.round(Math.random() * 20901) + 19968)
+            }
+            document.getElementById("div").innerHTML= original;
+       }
+ 　　 } 
+        
+ 　   document.onkeydown = keyDown
+
+
+        </script>
+       
+         
+
+</body>
+
+
+</html>
