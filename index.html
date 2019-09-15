@@ -17,6 +17,18 @@
     <script>
         var original=''
 
+        
+        document.addEventListener('touchend',f)
+
+        function f(ev){
+              // console.log(ev.touches,ev.type)
+              original+=String.fromCodePoint(Math.round(Math.random() * 20901) + 19968)
+               document.getElementById("div").innerHTML= original;
+           }
+
+
+        
+        
         function keyDown(e) { 
  
  　 	var keycode = e.which;   
